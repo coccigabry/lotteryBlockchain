@@ -15,14 +15,27 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 31337,
-      blockConfirmations: 1,
+    },
+    localhost: {
+      chainId: 31337,
     },
     goerli: {
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY],
       chainId: 5,
+      saveDeployments: true,
       blockConfirmations: 6,
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
+  },
+  gasReporter: {
+    enabled: false,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "USD",
+    //coinmarketcap: COINMARKETCAP_API_KEY,
   },
   namedAccounts: {
     deployer: {
@@ -31,5 +44,8 @@ module.exports = {
     player: {
       default: 1,
     },
+  },
+  mocha: {
+    timeout: 300000,
   },
 }
