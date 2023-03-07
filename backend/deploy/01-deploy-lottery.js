@@ -46,9 +46,6 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     await vrfCoordinatorV2Mock.addConsumer(subscriptionId, lottery.address)
   }
 
-  console.log(devChains)
-  console.log(network.name)
-
   if (!devChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
     log("Verifying...")
     await verify(lottery.address, args)
