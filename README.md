@@ -6,4 +6,4 @@ It uses Chainlink VRF to get a pure verifiably random number and Automation to t
 <br>
 **for testing purposes only**
 <br><br>
-[![My Skills](https://skillicons.dev/icons?i=solidity,nodejs)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=solidity,nodejs,nextjs,tailwindcss)](https://skillicons.dev)
