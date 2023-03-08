@@ -6,8 +6,9 @@ const FRONTEND_ABI_FILE = "../client/constants/abi.json"
 
 module.exports = async () => {
   if (process.env.UPDATE_FRONTEND) console.log("Updating Frontend...")
-  updateContractAddresses()
-  updateAbi()
+  await updateContractAddresses()
+  await updateAbi()
+  console.log("Frontend written!")
 }
 
 const updateContractAddresses = async () => {
@@ -23,11 +24,15 @@ const updateContractAddresses = async () => {
     currentAddresses[chainId] = [lottery.address]
   }
   fs.writeFileSync(FRONTEND_LOCATION_ADDRESSES_FILE, JSON.stringify(currentAddresses))
+  console.log(`Contract Address updated: ${JSON.stringify(currentAddresses)}`)
+  console.log(`---------------------------------------------------------------------------------`)
 }
 
 const updateAbi = async () => {
   const lottery = await ethers.getContract("Lottery")
   fs.writeFileSync(FRONTEND_ABI_FILE, lottery.interface.format(ethers.utils.FormatTypes.json))
+  console.log(`abi updated: ${lottery.interface.format(ethers.utils.FormatTypes.json)}`)
+  console.log(`---------------------------------------------------------------------------------`)
 }
 
 module.exports.tags = ["all", "frontend"]
