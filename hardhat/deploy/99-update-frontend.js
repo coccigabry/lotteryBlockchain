@@ -1,8 +1,8 @@
 const { ethers, network } = require("hardhat")
 const fs = require("fs")
 
-const FRONTEND_LOCATION_ADDRESSES_FILE = "../client/constants/contractAddresses.json"
-const FRONTEND_ABI_FILE = "../client/constants/abi.json"
+const FRONTEND_LOCATION_ADDRESSES_FILE = "../frontend/constants/contractAddresses.json"
+const FRONTEND_ABI_FILE = "../frontend/constants/abi.json"
 
 module.exports = async () => {
   if (process.env.UPDATE_FRONTEND) console.log("Updating Frontend...")

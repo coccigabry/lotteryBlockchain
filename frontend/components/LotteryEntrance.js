@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useMoralis, useWeb3Contract } from "react-moralis"
-import { abi, contractAddresses } from "../constants/constants.js"
+import { abi, contractAddresses } from "../constants/constants"
 import { ethers } from "ethers"
 import { useNotification } from "web3uikit"
 import { Bell } from "@web3uikit/icons"
@@ -11,7 +11,7 @@ export default function LotteryEntrance() {
   const lotteryAddress = chainId in contractAddresses ? contractAddresses[chainId][0] : null
   const [entranceFee, setEntranceFee] = useState("0")
   const [numPlayers, setNumPlayers] = useState("0")
-  const [recentWinner, setRecentWinner] = useState("")
+  const [recentWinner, setRecentWinner] = useState("none")
 
   const dispatch = useNotification()
 
